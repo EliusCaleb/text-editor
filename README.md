@@ -17,7 +17,7 @@ Node.js installed on the local machine
 
 
 #  Adding react-quill to react-application
-We are going to start by adding dependencies to our react application using yarn or npm. I am going to use yarn in this case.
+We are going to start by adding dependencies to our react application using yarn or npm. I am going to use npm in this case.
 
 npm i react-quill
 
