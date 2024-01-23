@@ -210,7 +210,7 @@ const imageHandler = () => {
 
 ## Updated code:
 
-// components/Editor.js
+   // components/Editor.js
 
 // Importing styles
 import { useCallback, useMemo, useRef, useState } from "react";
@@ -314,7 +314,6 @@ const Editor = () => {
 };
 
 export default Editor;
-
 
 The image handler can be changed in several ways which may include uploading the image to an object storage service such as Amazon S3 rather than directly embedding the image into our editor which greatly reduces the size of the editor’s content.
 
