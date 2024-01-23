@@ -22,7 +22,7 @@ We are going to start by adding dependencies to our react application using yarn
 npm i react-quill
 
 #  Initial Setup
-
+```
 import "./editor.css";
 
 const Editor = () => {
@@ -34,9 +34,9 @@ const Editor = () => {
 };
 
 export default Editor;
-
+```
 /* components/editor.css */
-
+```
 .wrapper {
     padding: 2rem 3rem;
 }
@@ -46,12 +46,12 @@ export default Editor;
       font-weight: 500;
 }
 
-
+```
 ##  Adding react-quill
 We are going to import the editor from the package and which comes with styles that we can import via import ‘react-quill/dist/quill.snow.css’ and reference the theme via the theme property.
 
 The editor offers a value that is always in HTML format property that holds the current value of the editor and an onChange method that is triggered each time the input changes returning the new value. So we shall then create a state that will hold the value for the editor and update it each time the user types in the editor.
-
+```
 import { useState } from "react";
 import "./editor.css";
 import QuillEditor from "react-quill";
@@ -71,7 +71,8 @@ const Editor = () => {
 };
 
 export default Editor;
-
+```
+```
 /* components/editor.css */
 
 .wrapper {
@@ -88,13 +89,13 @@ export default Editor;
   height: 500px;
 }
 
-
+```
 With this, we have a basic rich text editor that supports h1 — h3, p, ol ul, bolding, and italics.
 
 Finally, let’s add a button that will log the current value of the editor once it is clicked.
 
-
-// components/Editor/main.js
+```
+// components/Editor.js
 
 // Importing helper modules
 import { useState } from "react";
@@ -132,7 +133,7 @@ const Editor = () => {
 };
 
 export default Editor;
-
+```
 ## Extending formatting options.
 
 We have realized that the default editor is kind of minimalistic and limited when it comes to formatting options, but we can go ahead and change that with the help of formats and modules.
@@ -143,7 +144,7 @@ const formats = ["header","bold","italic","underline","strike","blockquote",
     "list","bullet","indent","link","image","color","clean",
   ];
 Modules offer additional features or plugins that can be added to enhance the functionality of the react-quill editor. Modules provide extended capabilities beyond basic text formatting. Examples of modules react-quill include a toolbar, clipboard, keyboard, history, and image handling. These modules allow you to customize and extend the editor's behavior, enabling features such as image insertion, undo/redo functionality, keyboard shortcuts, etc. These are defined as an object;
-
+```
 const modules = {
       toolbar: {
         container: [
@@ -167,6 +168,7 @@ const modules = {
         matchVisual: true,
       },
     }
+```
 container: Specifies the toolbar buttons to be displayed. It is an array of arrays where each sub-array represents a group of buttons. The provided configuration includes:
 [{ header: [1, 2, 3, 4, false] }]: Displays the header dropdown with options for header levels 2, 3, 4, and no header.
 ["bold", "italic", "underline", "blockquote"]: Displays buttons for bold, italic, underline, and blockquote.
@@ -180,7 +182,7 @@ clipboard: Configuration related to clipboard behavior. The provided configurati
 ##  Adding An Image Handler
 
 The image handler function will be responsible for listening for image upload, will generate an image URL, and inserting the image into our editor as an img element where src is the image URL.
-
+```
 const imageHandler = () => {
     // Create an input element of type 'file'
     const input = document.createElement("input");
@@ -206,10 +208,10 @@ const imageHandler = () => {
       reader.readAsDataURL(file);
     };
 }
-
+```
 
 ## Updated code:
-
+```
    // components/Editor.js
 
 // Importing styles
@@ -314,6 +316,7 @@ const Editor = () => {
 };
 
 export default Editor;
+```
 
 The image handler can be changed in several ways which may include uploading the image to an object storage service such as Amazon S3 rather than directly embedding the image into our editor which greatly reduces the size of the editor’s content.
 
