@@ -1,10 +1,10 @@
 
-import './App.css';
+import Editor from "./components/Editor";
 
 function App() {
   return (
-    <div className="App">
-       <h1>Hello World</h1>
+    <div >
+    <Editor />
     </div>
   );
 }
