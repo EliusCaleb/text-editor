@@ -1,4 +1,4 @@
-## Creating a rich text editor using react and react-quill.
+# Creating a rich text editor using react and react-quill.
 
 When developing websites, one crucial requirement is implementing a rich text editor. It plays a vital role in allowing users to create engaging content such as blog posts and web pages that incorporate various formatting options and the ability to insert images. By integrating a rich text editor into your web application, you provide users with an intuitive interface that fosters creativity and enhances the overall user experience.
 
